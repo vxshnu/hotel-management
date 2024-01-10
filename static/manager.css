@@ -273,3 +273,92 @@ input[type="text"], input[type="password"], input[type="email"] {
 #updateButton:hover::before {
     width: 100%;
 }
+
+#cancelButton2{
+    padding: 10px;
+    width: 100px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border: unset;
+    color: white;
+    z-index: 1;
+    background: #7747ff;
+    position: relative;
+    font-weight: 1000;
+    font-size: 14px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden
+}
+#cancelButton2::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 5px;
+    background-color: rgba(17, 24, 39, 1);
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms
+}
+#cancelButton2:hover {
+    color: #e8e8e8;
+}  
+#cancelButton2:hover::before {
+    width: 100%;
+}
+
+.staff-container {
+    display: flex;
+    gap: 170px;
+    margin-top: 280px; 
+    margin-left: 150px;
+    margin-right: 100px;
+}
+
+.staff-button {
+    padding: 10px;
+    width: 200px;
+    margin-left: 130px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border: unset;
+    color: white;
+    z-index: 1;
+    background: #7747ff;
+    position: relative;
+    font-weight: 1000;
+    font-size: 20px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
+}
+.staff-button::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 5px;
+    background-color: rgba(17, 24, 39, 1);
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms
+}
+.staff-button:hover {
+    color: #e8e8e8;
+}  
+.staff-button:hover::before {
+    width: 100%;
+}

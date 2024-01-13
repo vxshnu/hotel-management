@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet"  href="../static/login.css">
+              <title>
+            login page
+        </title>
+    </head>
+    <style>
+        body{
+           background-image:url("hotel.webp");
+           background-repeat: no-repeat;
+           background-size: cover;
+           background-color: black;
+        }
+    </style>
+<body>
+    <div class="wrapper">
+        <h2 class="logo">LOGO</h2>
+    </div>
+    <div class="heading">
+    <form action="/login" method="POST">
+        <h1 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 19px; ">LOGIN</h1>
+        <div class="input-box">
+        <input type="text" class="input" placeholder="Email" name="email" required>
+        </div>
+        <div class="input-box">
+        <input type="password" class="input" placeholder="Password" name="password" required>
+        </div>
+        <input type="submit" name="submit" class="submit" value="LOGIN"><br><br>
+        </div>
+    </form>
+    </div>
+</body>
+</html>

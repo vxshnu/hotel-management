@@ -1,10 +1,55 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <style>
+.my-button {
+    padding: 12px;
+    width: 300px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    background: #7747ff;  
+    font-weight: 1000;
+    font-size: 20px;
+    margin-left: 200px;
+    margin-top: 300px;
+}
+.buttonn{
+    padding: 12px;
+    width: 300px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    background: #7747ff;  
+    font-weight: 1000;
+    font-size: 20px;
+    margin-left: 500px;
+}
+.btn{
+  padding: 8px;
+  margin-top: 300px;
+  margin-left: 710px; ;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: red;
+  font-size: 12px;
+  font-weight: bold;
+}
+   </style>
+  </head>
     <body>
         <form action="/chef" method="POST">
-            <input type="submit" name="submit" value="orders" >
-            <input type="submit" name="submit" value="orderhistory" >
-            <input type="submit" name="submit" value="pricing" >
+          <div>
+            <input type="submit" name="submit" value="CURRENT ORDERS" class="my-button">
+            <input type="submit" name="submit" value="ORDER HISTORY" class="buttonn">
+          </div>
+            <input type="submit" name="submit" value="LOGOUT" class="btn">            
         </form>
     </body>
 </html>

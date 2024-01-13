@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Billing Page</title>
+  <link rel="stylesheet" href="../static/billing.css">
+</head>
+<body>
+  <div class="billing-container">
+    <h1>BILLING</h1>
+    <table class="billing-table">
+      <tr>
+        <td>RESERVATION ID</td>
+        <td>{{reswid}}</td>
+      </tr>
+      <tr>
+        <td>AMOUNT</td>
+        <td>${{amt}}</td>
+      </tr>
+      <tr>
+        <td>EXTRA CHARGES</td>
+        <td>${{charge}}</td>
+      </tr>
+      <tr>
+        <td>TOTAL AMOUNT</td>
+        <td>${{tot}}</td>
+      </tr>
+    </table>
+    <form action="/billed" method="POST">
+      <button type="submit">PAID</button>
+    </form>
+  </div>
+</body>
+</html>

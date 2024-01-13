@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOTEL</title>
-    <link rel="stylesheet" href="../static/manager.css">
+    <link rel="stylesheet" href="style.css">
 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -193,52 +193,52 @@
               
                 <div id="rst" style="display: none;">
                     <!-- Room Status Table -->
-                    <table align="center" style="width: 10%; border-color: transparent; margin-top: 50px;">
+                    <table align="center" style="width: 10%; margin-top: 50px; border-collapse: collapse;">
                       <tr>
-                        <th style=" padding: 5px; width: 5%; font-weight: bold; font-size: 120%;">ID</th>
-                        <th style=" padding: 5px; width: 5%; font-weight: bold; font-size: 120%;">FLOOR NO</th>
-                        <th style=" padding: 5px; width: 5%; font-weight: bold; font-size: 120%;">TYPE</th>
-                        <th style=" padding: 5px; width: 5%; font-weight: bold; font-size: 120%;">DESCRIPTION</th>
-                        <th style=" padding: 5px; width: 5%; font-weight: bold; font-size: 120%;">BOOKED DATES</th>
-                        <th style=" padding: 5px; width: 5%; font-weight: bold; font-size: 120%;">STATUS</th>
-                        <th style=" padding: 5px; width: 5%; font-weight: bold; font-size: 120%;">PRICE</th>
+                        <th style=" padding: 10px; width: 5%; font-weight: bold; font-size: 120%; border: 2px solid;">ID</th>
+                        <th style=" padding: 10px; width: 5%; font-weight: bold; font-size: 120%; border: 2px solid;">FLOOR NO</th>
+                        <th style=" padding: 10px; width: 5%; font-weight: bold; font-size: 120%; border: 2px solid;">TYPE</th>
+                        <th style=" padding: 20px; width: 5%; font-weight: bold; font-size: 120%; border: 2px solid;">DESCRIPTION</th>
+                        <th style=" padding: 20px; width: 5%; font-weight: bold; font-size: 120%; border: 2px solid;">BOOKED DATES</th>
+                        <th style=" padding: 10px; width: 5%; font-weight: bold; font-size: 120%; border: 2px solid;">STATUS</th>
+                        <th style=" padding: 10px; width: 5%; font-weight: bold; font-size: 120%; border: 2px solid;">PRICE</th>
                         <!-- Add more columns as needed -->
                     </tr>
                     {% for room in roomdetails: %}
                       <!-- Add room status data rows here -->
                       <tr>
-                        <td style=" padding: 10px;">{{room[0]}}</td>
-                        <td style=" padding: 10px;">{{room[1]}}</td>
-                        <td style=" padding: 10px;">{{room[2]}}</td>
-                        <td style=" padding: 10px;">{{room[3]}}</td>
-                        <td style=" padding: 10px;">{{room[4]}}</td>
-                        <td style=" padding: 10px;">{{room[5]}}</td>
-                        <td style=" padding: 10px;">{{room[6]}}</td>
+                        <td style=" padding: 10px; border: 2px solid;">{{room[0]}}</td>
+                        <td style=" padding: 10px; border: 2px solid;">{{room[1]}}</td>
+                        <td style=" padding: 10px; border: 2px solid;">{{room[2]}}</td>
+                        <td style=" padding: 10px; border: 2px solid;">{{room[3]}}</td>
+                        <td style=" padding: 10px; border: 2px solid;">{{room[4]}}</td>
+                        <td style=" padding: 10px; border: 2px solid;">{{room[5]}}</td>
+                        <td style=" padding: 10px; border: 2px solid;">{{room[6]}}</td>
                       </tr>
                     {% endfor %}
                     </table>
                 </div>
               
                 <div id="amenities" style="display: none;">
-                  <table align="center" style="width: 10%;  border-color: transparent; margin-top: 50px;">
+                  <table align="center" style="width: 10%;  border-collapse: collapse; margin-top: 50px;">
                     <tr>
-                      <th style=" padding: 5px; width: 5%; font-size: 120%;">NAME</th>
-                      <th style=" padding: 5px; width: 10%; font-size: 120%;">ID</th>
-                      <th style=" padding: 5px; width: 10%; font-size: 120%;">GUEST COUNT</th>
-                      <th style=" padding: 5px; width: 5%; font-size: 120%;">ROOMID</th>
-                      <th style=" padding: 5px; width: 10%; font-size: 120%;">AMOUNT</th>
-                      <th style=" padding: 5px; width: 10%; font-size: 120%;">STATUS</th>
-                      <th style=" padding: 5px; width: 10%; font-size: 120%;">DATES</th>
+                      <th style=" padding: 5px; width: 5%; font-size: 120%;  border: 2px solid;">NAME</th>
+                      <th style=" padding: 5px; width: 10%; font-size: 120%; border: 2px solid;">ID</th>
+                      <th style=" padding: 5px; width: 10%; font-size: 120%; border: 2px solid;">GUEST COUNT</th>
+                      <th style=" padding: 5px; width: 5%; font-size: 120%; border: 2px solid;">ROOMID</th>
+                      <th style=" padding: 5px; width: 10%; font-size: 120%; border: 2px solid;">AMOUNT</th>
+                      <th style=" padding: 5px; width: 10%; font-size: 120%; border: 2px solid;">STATUS</th>
+                      <th style=" padding: 5px; width: 10%; font-size: 120%; border: 2px solid;">DATES</th>
                     </tr>
                     {% for reservation in reservations: %}
                     <tr>
-                        <td style=" padding: 10px;">{{reservation[1]}}</td>
-                        <td style=" padding: 10px;">{{reservation[0]}}</td>
-                        <td style=" padding: 10px;">{{reservation[2]}}</td>
-                        <td style=" padding: 10px;">{{reservation[4]}}</td>
-                        <td style=" padding: 10px;">{{reservation[5]}}</td>
-                        <td style=" padding: 10px;">{{reservation[8]}}</td>
-                        <td style=" padding: 10px;">{{reservation[9]}}</td>
+                        <td style=" padding: 10px; border: 2px solid;">{{reservation[1]}}</td>
+                        <td style=" padding: 10px; border: 2px solid;">{{reservation[0]}}</td>
+                        <td style=" padding: 10px; border: 2px solid;">{{reservation[2]}}</td>
+                        <td style=" padding: 10px; border: 2px solid;">{{reservation[4]}}</td>
+                        <td style=" padding: 10px; border: 2px solid;">{{reservation[5]}}</td>
+                        <td style=" padding: 10px; border: 2px solid;">{{reservation[8]}}</td>
+                        <td style=" padding: 10px; border: 2px solid;">{{reservation[9]}}</td>
                       </tr>
                      {% endfor %}
 
@@ -247,25 +247,25 @@
   
                 
                 <div id="rse" style="display: none;">
-                  <table id="orderTable" align="center" style="width:10%;  border-color: transparent; margin-top: 50px;">
+                  <table id="orderTable" align="center" style="width:10%; margin-top: 30px; border-collapse:collapse;">
                     <tr>
-                      <th style=" padding: 5px; width: 5%; font-size: 120%;">ORDER NO</th>
-                      <th style=" padding: 5px; width: 10%; font-size: 120%;">RESERVATION ID</th>
-                      <th style=" padding: 5px; width: 10%; font-size: 120%;">ORDER LIST</th>
-                      <th style=" padding: 5px; width: 5%; font-size: 120%;">ORDER UPDATE</th>
-                      <th style=" padding: 5px; width: 10%; font-size: 120%;">STATUS</th>
-                      <th style=" padding: 5px; width: 10%; font-size: 120%;">PRICE</th>
-                      <th style=" padding: 5px; width: 10%; font-size: 120%;">ORDER TIME</th>
+                      <th style=" padding: 20px; width: 10%; font-size: 120%; border: 2px solid;">ORDER NO</th>
+                      <th style=" padding: 20px; width: 10%; font-size: 120%; border: 2px solid;">RESERVATION ID</th>
+                      <th style=" padding: 20px; width: 20%; font-size: 120%; border: 2px solid;">ORDER LIST</th>
+                      <th style=" padding: 40px; width: 10%; font-size: 120%; border: 2px solid;">ORDER UPDATE</th>
+                      <th style=" padding: 20px; width: 10%; font-size: 120%; border: 2px solid;">PAYMENT STATUS</th>
+                      <th style=" padding: 20px; width: 10%; font-size: 120%; border: 2px solid;">PRICE</th>
+                      <th style=" padding: 30px; width: 10%; font-size: 120%; border: 2px solid;">ORDER TIME</th>
                     </tr>
                     {% for order in ordered %}
                     <tr>
-                      <td style=" padding: 10px;">{{order[0]}}</td>
-                      <td style=" padding: 10px;">{{order[1]}}</td>
-                      <td style=" padding: 10px;">{{order[2]}}</td>
-                      <td style=" padding: 10px;">{{order[3]}}</td>
-                      <td style=" padding: 10px;">{{order[4]}}</td>
-                      <td style=" padding: 10px;">{{order[5]}}</td>
-                      <td style=" padding: 10px;">{{order[6]}}</td>
+                      <td style=" padding: 10px; width: 10%; border: 2px solid;">{{order[0]}}</td>
+                      <td style=" padding: 10px; width: 10%; border: 2px solid;">{{order[1]}}</td>
+                      <td style=" padding: 10px; width: 20%; border: 2px solid;">{{order[2]}}</td>
+                      <td style=" padding: 10px; width: 10%; border: 2px solid;">{{order[3]}}</td>
+                      <td style=" padding: 10px; width: 10%; border: 2px solid;">{{order[4]}}</td>
+                      <td style=" padding: 10px; width: 10%; border: 2px solid;">{{order[5]}}</td>
+                      <td style=" padding: 10px; width: 10%; border: 2px solid;">{{order[6]}}</td>
                   </tr>
                     {% endfor %}
                 </table><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -321,26 +321,25 @@
                 
 
       <div id="staff" style="display: none;">
-        <table  id="staffTable" align="left" style="width:10%;  border-color: transparent; margin-top: 50px; margin-left: 180px;">
+        <table  id="staffTable" align="left" style="width:10%;  border-collapse: collapse; margin-top: 30px; margin-left: 180px;">
           <tr>
-            <th style=" padding: 15px; width: 20%; font-size: 120%;">STAFF ID</th>
-            <th style=" padding: 15px; width: 20%; font-size: 120%;">NAME</th>
-            <th style=" padding: 15px; width: 20%; font-size: 120%;">ADDRESS</th>
-            <th style=" padding: 15px; width: 20%; font-size: 120%;">DESIGNATION</th>
-            <th style=" padding: 15px; width: 20%; font-size: 120%;">SALARY</th>
-            <th style=" padding: 15px; width: 20%; font-size: 120%;">PHONE NO</th>
-            <th style=" padding: 15px; width: 20%; font-size: 120%;">DATE OF JOIN</th>  
+            <th style=" padding: 15px; width: 20%; font-size: 120%; border: 2px solid;">STAFF ID</th>
+            <th style=" padding: 15px; width: 20%; font-size: 120%; border: 2px solid;">NAME</th>
+            <th style=" padding: 15px; width: 20%; font-size: 120%; border: 2px solid;">ADDRESS</th>
+            <th style=" padding: 15px; width: 20%; font-size: 120%; border: 2px solid;">DESIGNATION</th>
+            <th style=" padding: 15px; width: 20%; font-size: 120%; border: 2px solid;">SALARY</th>
+            <th style=" padding: 15px; width: 20%; font-size: 120%; border: 2px solid;">PHONE NO</th>
+            <th style=" padding: 15px; width: 20%; font-size: 120%; border: 2px solid;">DATE OF JOIN</th>  
           </tr>
           {% for staff in staffs: %}
           <tr>
-            <td style=" padding: 10px;">{{staff[0]}}</td>
-            <td style=" padding: 10px;">{{staff[1]}}</td>
-            <td style=" padding: 10px;">{{staff[2]}}</td>
-            <td style=" padding: 10px;">{{staff[3]}}</td>
-            <td style=" padding: 10px;">{{staff[4]}}</td>
-            <td style=" padding: 10px;">{{staff[5]}}</td>
-            
-            <td style=" padding: 10px;">{{staff[6]}}</td>
+            <td style=" padding: 10px; border: 2px solid;">{{staff[0]}}</td>
+            <td style=" padding: 10px; border: 2px solid;">{{staff[1]}}</td>
+            <td style=" padding: 10px; border: 2px solid;">{{staff[2]}}</td>
+            <td style=" padding: 10px; border: 2px solid;">{{staff[3]}}</td>
+            <td style=" padding: 10px; border: 2px solid;">{{staff[4]}}</td>
+            <td style=" padding: 10px; border: 2px solid;">{{staff[5]}}</td>
+            <td style=" padding: 10px; border: 2px solid;">{{staff[6]}}</td>
             <!-- <td style=" padding: 10px;">
               <img src="data:image/jpeg;base64,{{ staff[8]|safe }}" alt="Image" style="height: 100px; width: 100px;">
 

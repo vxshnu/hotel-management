@@ -74,9 +74,11 @@ def login():
             print(session)
             if session['designation']=='Chef':
                 return render_template('options.html')
-            else:
+            elif session['designation']=='Manager':
                 refresh()
                 return render_template('manager.html',name=session['name'],latestreserv=reservationid,roomdetails=room_status,ordered=order_status,staffs=staff_status,reservations=reserv_status)
+            else:
+                return redirect(url_for('home'))
         else:
             return redirect(url_for('home'))
     else:
@@ -146,8 +148,8 @@ def reservation():
                 
                 while current_date < datetill1:
                     print(current_date.strftime("%Y-%m-%d"))
-                    current_date += timedelta(days=1)
                     datestring+=current_date.strftime("%Y-%m-%d")+","
+                    current_date += timedelta(days=1)
                     counter+=1
                 print(datestring)
                 db.execute('select price from rooms where roomid=%s;',(ids,))
@@ -180,6 +182,7 @@ def reservation():
         refresh()
         return render_template('manager.html',name=session['name'],latestreserv=reservationid,roomdetails=room_status,ordered=order_status,staffs=staff_status,reservations=reserv_status)
         
+
     
 @app.route('/checkout',methods=['GET','POST'])
 def checkout():
@@ -196,10 +199,10 @@ def checkout():
             total =total+result[0][0]
         db.execute('update reservations set addons_price=%s where reservation_id=%s',(resid,total,))
         myconn.commit()
-        db.execute('select amount from reservations where reservation_id=%s and gstatus="CHECKIN"',(resid,))
+        db.execute('select amount,name from reservations where reservation_id=%s and gstatus="CHECKIN"',(resid,))
         result=db.fetchone()
         if result:
-            return render_template('billing.html',reswid=resid,amt=result[0],charge=total,tot=total+result[0])
+            return render_template('billing.html',reswid=resid,name=result[1],amt=result[0],charge=total,tot=total+result[0])
         else:
             return "INVALID!"
     
@@ -328,17 +331,21 @@ def updatestaff():
 def chef():
     if request.method=='POST':
         button=request.form.get('submit')
-        if button=='orders':
+        if button=='CURRENT ORDERS':
             db.execute('select orderid,order_list,time from orders where order_update="Prep"')
             result=db.fetchall()
             return render_template('orders.html',orders=result)
-        elif button=='orderhistory':
+        elif button=='ORDER HISTORY':
             db.execute('select orderid,reservationid,order_list,order_update,o_payment,price,time from orders ORDER BY orderid DESC;')
             result=db.fetchall()
             print(result)
             return render_template('orderhistory.html',orders=result)
         else:
-            return render_template('pricing.html')
+            session.pop('username',None)
+            session.pop('name',None)
+            session.pop('designation',None)
+            print(session)
+            return redirect(url_for('home'))
     else:
         return 'Wrong!'
 
@@ -355,6 +362,9 @@ def orderaction():
     else:
         return 'Wrong!'    
 
+@app.route('/back',methods=['GET','POST'])
+def back():
+    return render_template('options.html')
 
 if __name__=="__main__":
     app.run(debug=True)
